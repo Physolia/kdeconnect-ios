@@ -38,38 +38,20 @@ let backgroundService: BackgroundService = BackgroundService(connectedDeviceView
 
 // Haptics provider, for a list of the enum values see
 // https://developer.apple.com/documentation/uikit/uiimpactfeedbackgenerator/feedbackstyle
-extension UIImpactFeedbackGenerator.FeedbackStyle : CaseIterable, CustomStringConvertible {
-    public var description: String {
+extension UIImpactFeedbackGenerator.FeedbackStyle : CaseIterable {
+    public var text: Text {
         switch self {
-        case .light: return NSLocalizedString("Light", comment:"Light haptic feedback level")
-        case .medium: return NSLocalizedString("Medium", comment:"Medium haptic feedback level")
-        case .heavy: return NSLocalizedString("Heavy", comment:"Hard haptic feedback level")
-        case .rigid: return NSLocalizedString("Rigid", comment:"Rigid haptic feedback level")
-        case .soft: return NSLocalizedString("Soft", comment:"Soft haptic feedback level")
-        @unknown default: return NSLocalizedString("Other", comment: "Unknown feedback level 🤷‍♂️")
-        }
-    }
-    
-    public var hapticStyle: HapticStyle {
-        if let style = HapticStyle(rawValue: UInt(self.rawValue)) {
-            return style
-        } else {
-            return HapticStyle.medium
+        case .light: return Text("Light", comment:"Light haptic feedback level")
+        case .medium: return Text("Medium", comment:"Medium haptic feedback level")
+        case .heavy: return Text("Heavy", comment:"Hard haptic feedback level")
+        case .rigid: return Text("Rigid", comment:"Rigid haptic feedback level")
+        case .soft: return Text("Soft", comment:"Soft haptic feedback level")
+        @unknown default: return Text("Other", comment: "Unknown feedback level 🤷‍♂️")
         }
     }
     
     public static var allCases: [UIImpactFeedbackGenerator.FeedbackStyle] {
         return [.light, .medium, .heavy, .rigid, .soft]
-    }
-}
-
-extension HapticStyle {
-    public var uiImpactFeedbackGeneratorFeedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle {
-        if let feedbackStyle = UIImpactFeedbackGenerator.FeedbackStyle(rawValue: Int(self.rawValue)) {
-            return feedbackStyle
-        } else {
-            return UIImpactFeedbackGenerator.FeedbackStyle.medium
-        }
     }
 }
 

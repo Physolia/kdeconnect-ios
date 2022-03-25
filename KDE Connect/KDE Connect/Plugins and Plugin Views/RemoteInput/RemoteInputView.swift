@@ -118,14 +118,14 @@ struct RemoteInputView: View {
                 VStack {
                     Picker(selection: $hapticSettings, label: Text("Haptics Style")) {
                         ForEach(UIImpactFeedbackGenerator.FeedbackStyle.allCases, id: \.self) { style in
-                            Text(style.description)
+                            style.text
                                 .tag(style)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .onChange(of: hapticSettings, perform: { style in
                         UIImpactFeedbackGenerator(style: style).impactOccurred()
-                        backgroundService._devices[detailsDeviceId]!._hapticStyle = style.hapticStyle
+                        backgroundService._devices[detailsDeviceId]!.hapticStyle = style
                         saveDeviceToUserDefaults(deviceId: detailsDeviceId)
                     })
                     Text("On-Click Haptic Style")
@@ -188,7 +188,7 @@ struct RemoteInputView: View {
             }
             // New device's hapticStyle is automatically 0 (light) as it came from Obj-C initialization
             
-            hapticSettings = backgroundService._devices[detailsDeviceId]!._hapticStyle.uiImpactFeedbackGeneratorFeedbackStyle
+            hapticSettings = backgroundService._devices[detailsDeviceId]!.hapticStyle
         }
     }
     
