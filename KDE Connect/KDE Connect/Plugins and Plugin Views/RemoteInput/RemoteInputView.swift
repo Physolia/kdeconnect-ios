@@ -24,7 +24,7 @@ struct RemoteInputView: View {
     @State private var previousScrollHorizontalDragOffset: Float = 0.0
     
     @State private var cursorSensitivityFromSlider: Float = 3.0 // defaults to the middle
-    @State private var hapticSettings: UIImpactFeedbackGenerator.FeedbackStyle = UIImpactFeedbackGenerator.FeedbackStyle.light
+    @State private var hapticSettings: UIImpactFeedbackGenerator.FeedbackStyle = .light
     @State private var showingSensitivitySlider: Bool = false
     @State private var showingHapticSegmentPicker: Bool = false
     
