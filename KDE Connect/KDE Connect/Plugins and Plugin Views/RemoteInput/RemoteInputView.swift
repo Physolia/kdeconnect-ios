@@ -118,7 +118,8 @@ struct RemoteInputView: View {
                 VStack {
                     Picker(selection: $hapticSettings, label: Text("Haptics Style")) {
                         ForEach(UIImpactFeedbackGenerator.FeedbackStyle.allCases, id: \.self) { style in
-                            Text(style.description).tag(style.rawValue)
+                            Text(style.description)
+                                .tag(style)
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
