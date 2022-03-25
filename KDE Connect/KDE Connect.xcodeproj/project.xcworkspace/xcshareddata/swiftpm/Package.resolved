@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CocoaAsyncSocket",
-        "repositoryURL": "https://github.com/ApolloZhu/CocoaAsyncSocket",
-        "state": {
-          "branch": "master",
-          "revision": "43e6bfce048b877f3fc4d55008c41134c5e8ecdd",
-          "version": null
-        }
-      },
-      {
-        "package": "OpenSSL",
-        "repositoryURL": "https://github.com/krzyzanowskim/OpenSSL.git",
-        "state": {
-          "branch": null,
-          "revision": "45545c5729b5597d2d4910a5edd07b1bf42e5839",
-          "version": "1.1.1200"
-        }
-      },
-      {
-        "package": "SwiftUI-MediaPicker",
-        "repositoryURL": "https://github.com/UWAppDev/SwiftUI-MediaPicker.git",
-        "state": {
-          "branch": null,
-          "revision": "43cf23f8eb4930aa27a7cec12bfadb6f49d33a39",
-          "version": "0.0.1"
-        }
+  "pins" : [
+    {
+      "identity" : "cocoaasyncsocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ApolloZhu/CocoaAsyncSocket",
+      "state" : {
+        "branch" : "master",
+        "revision" : "43e6bfce048b877f3fc4d55008c41134c5e8ecdd"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "openssl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/OpenSSL.git",
+      "state" : {
+        "revision" : "45545c5729b5597d2d4910a5edd07b1bf42e5839",
+        "version" : "1.1.1200"
+      }
+    },
+    {
+      "identity" : "swiftui-mediapicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/UWAppDev/SwiftUI-MediaPicker.git",
+      "state" : {
+        "revision" : "43cf23f8eb4930aa27a7cec12bfadb6f49d33a39",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
 }
